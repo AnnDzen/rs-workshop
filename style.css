@@ -249,25 +249,7 @@ nav a {
 
 }
 
-/* .menu_button {
-    display: inline-flex;
-    border-radius: 100px;
-    padding: 20px 78px;
-    width: 200px;
-    height: 64px;
-    font-family: var(--font-family);
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 150%;
-    text-align: center;
-    color: #403F3D;
-    background-color: #E1D4C9;
-    border: none;
-    gap: 10px;
-    transition: background 0.3 ease;
-    cursor: pointer;
-    align-items: center;
-} */
+
 
 .menu_button a {
     text-decoration: none;
