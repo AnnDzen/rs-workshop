@@ -249,25 +249,7 @@ nav a {
 
 }
 
-/* .menu_button {
-    display: inline-flex;
-    border-radius: 100px;
-    padding: 20px 78px;
-    width: 200px;
-    height: 64px;
-    font-family: var(--font-family);
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 150%;
-    text-align: center;
-    color: #403F3D;
-    background-color: #E1D4C9;
-    border: none;
-    gap: 10px;
-    transition: background 0.3 ease;
-    cursor: pointer;
-    align-items: center;
-} */
+
 
 .menu_button a {
     text-decoration: none;
@@ -445,6 +427,110 @@ nav a {
 .cup_ofcoffe {
     max-width: 630px;
     width: 100%;
+}
+
+/* видео */
+
+.video-section {
+    width: 100%;
+}
+
+.video-wrapper {
+    position: relative; 
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 16 / 9;
+    background-color: #665f55;
+}
+
+.video-wrapper::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+    pointer-events: none; 
+    transition: opacity 0.5s ease;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease; 
+}
+
+
+.video-overlay {
+    position: absolute;
+    bottom: 48px; 
+    left: 48px;  
+    z-index: 2;
+    max-width: 460px; 
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.video-badge {
+    background-color: #E1D4C9;
+    color: #403F3D;
+    font-family: var(--font-family);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+}
+
+
+.video-overlay-title {
+    font-family: var(--font-family);
+    font-size: 36px;
+    font-weight: 600;
+    color: #E1D4C9;
+    margin: 0 0 12px 0;
+    line-height: 1.2;
+}
+
+
+.video-overlay-text {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85); 
+    margin: 0 0 24px 0;
+}
+
+
+.video-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #E1D4C9;
+    color: #403F3D;
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 100px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease, gap 0.3s ease;
+}
+
+
+.video-btn:hover {
+    background-color: #665f55;
+    color: #E1D4C9;
+    gap: 12px; 
 }
 
 /* окончание сайта */
@@ -627,6 +713,21 @@ footer .conteiner {
 
     h2 {
         font-size: clamp(32px, 4.54px + 7.22vw, 60px);
+    }
+     .video-overlay {
+        bottom: 24px;
+        left: 24px;
+        right: 24px; /* На мобильных растягиваем на всю доступную ширину */
+        max-width: 100%;
+    }
+    
+    .video-overlay-title {
+        font-size: 24px; /* Уменьшаем шрифт на смартфонах */
+    }
+    
+    .video-overlay-text {
+        font-size: 14px;
+        margin-bottom: 16px;
     }
 
 
