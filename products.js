@@ -78,7 +78,7 @@ const products = [
     image: "assets/tea/tea-1.svg",
     category: "tea",
     sizes: ["200 ml", "300 ml", "400 ml"],
-    additives: ["Sugar", "Cinnamon", "Syrup"]
+    additives: ["Sugar", "Lemon", "Syrup"]
   },
   {
     name: "Ginger",
@@ -87,7 +87,7 @@ const products = [
     image: "assets/tea/tea-2.svg",
     category: "tea",
     sizes: ["200 ml", "300 ml", "400 ml"],
-    additives: ["Sugar", "Cinnamon", "Syrup"]
+    additives: ["Sugar", "Lemon", "Syrup"]
   },
   {
     name: "Cranberry",
@@ -96,7 +96,7 @@ const products = [
     image: "assets/tea/tea-3.svg",
     category: "tea",
     sizes: ["200 ml", "300 ml", "400 ml"],
-    additives: ["Sugar", "Cinnamon", "Syrup"]
+    additives: ["Sugar", "Lemon", "Syrup"]
   },
   {
     name: "Sea buckthorn",
@@ -105,7 +105,7 @@ const products = [
     image: "assets/tea/tea-4.svg",
     category: "tea",
     sizes: ["200 ml", "300 ml", "400 ml"],
-    additives: ["Sugar", "Cinnamon", "Syrup"]
+    additives: ["Sugar", "Lemon", "Syrup"]
   },
   {
     name: "Marble cheesecake",
