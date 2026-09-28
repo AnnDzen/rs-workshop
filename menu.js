@@ -184,7 +184,7 @@ const products = [
 
 let currentCategory = 'coffee';
 let isAllShown = false;
-let currentProduct = null; 
+let currentProduct = null;
 const container = document.getElementById('products-container');
 const tabs = document.querySelectorAll('.menu-tab');
 const loadMoreBtn = document.getElementById('load-more-btn');
@@ -268,19 +268,19 @@ tabs.forEach(tab => {
 
 function calculateTotal() {
   if (!currentProduct) return;
-  
+
   let totalPrice = parseFloat(currentProduct.price);
   const activeSizeBtn = document.querySelector('.size-btn.is-active');
 
   if (activeSizeBtn) {
     const size = activeSizeBtn.getAttribute('data-size');
-    if (size === 'm') totalPrice += 0.50; 
-    if (size === 'l') totalPrice += 1.00; 
+    if (size === 'm') totalPrice += 0.50;
+    if (size === 'l') totalPrice += 1.00;
   }
 
-  
+
   const activeAdditivesCount = document.querySelectorAll('.add-btn.is-active').length;
-  totalPrice += activeAdditivesCount * 0.50; 
+  totalPrice += activeAdditivesCount * 0.50;
   modalPrice.textContent = `$${totalPrice.toFixed(2)}`;
 }
 
@@ -289,30 +289,30 @@ container.addEventListener('click', (event) => {
   if (!card) return;
 
   const productName = card.getAttribute('data-name');
-  currentProduct = products.find(item => item.name === productName); 
+  currentProduct = products.find(item => item.name === productName);
   if (currentProduct) {
     modalImg.src = currentProduct.image;
     modalImg.alt = currentProduct.name;
     modalTitle.textContent = currentProduct.name;
     modalDescription.textContent = currentProduct.description;
 
-    
+
     sizeButtons.forEach((btn, index) => {
       const sizeLabels = ["S", "M", "L"];
       btn.innerHTML = `<span class="size-circle">${sizeLabels[index]}</span> ${currentProduct.sizes[index]}`;
       btn.classList.remove('is-active');
     });
-    
+
     const defaultSize = document.querySelector('.size-btn[data-size="s"]');
     if (defaultSize) defaultSize.classList.add('is-active');
 
-   
+
     additivesButtons.forEach((btn, index) => {
       btn.innerHTML = `<span class="add-circle">${index + 1}</span> ${currentProduct.additives[index]}`;
       btn.classList.remove('is-active');
     });
 
-  
+
     calculateTotal();
 
     modalOverlay.classList.add('open');
@@ -327,18 +327,23 @@ modalOverlay.addEventListener('click', (event) => {
 });
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && modalOverlay.classList.contains('open')) closeModal();
+  if (headerNav && headerNav.classList.contains('open')) {
+    burgerToggle.classList.remove('open');
+    headerNav.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 });
 
 function closeModal() {
   modalOverlay.classList.remove('open');
   document.body.style.overflow = '';
-  currentProduct = null; 
+  currentProduct = null;
 }
 
 
 sizeButtons.forEach(btn => {
   btn.addEventListener('click', function () {
-    sizeButtons.forEach(item => item.classList.remove('is-active')); 
+    sizeButtons.forEach(item => item.classList.remove('is-active'));
     this.classList.add('is-active');
     calculateTotal();
 
@@ -364,26 +369,26 @@ const navLinks = document.querySelectorAll('.items_list a');
 
 
 burgerToggle.addEventListener('click', () => {
-   
-    burgerToggle.classList.toggle('open'); 
-    headerNav.classList.toggle('open');    
 
-    if (headerNav.classList.contains('open')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = '';
-    }
+  burgerToggle.classList.toggle('open');
+  headerNav.classList.toggle('open');
+
+  if (headerNav.classList.contains('open')) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
 });
 
 
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      
-        burgerToggle.classList.remove('open');
-        headerNav.classList.remove('remove'); 
-        headerNav.classList.remove('open');
-        document.body.style.overflow = ''; 
-    });
+  link.addEventListener('click', () => {
+
+    burgerToggle.classList.remove('open');
+    headerNav.classList.remove('remove');
+    headerNav.classList.remove('open');
+    document.body.style.overflow = '';
+  });
 });
 
 

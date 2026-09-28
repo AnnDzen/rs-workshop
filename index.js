@@ -110,20 +110,32 @@ navLinks.forEach(link => {
 const themeToggle = document.querySelector('.theme');
 
 if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-  
-    document.body.classList.toggle('dark-theme');
+    themeToggle.addEventListener('click', () => {
 
-    if (document.body.classList.contains('dark-theme')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  });
+        document.body.classList.toggle('dark-theme');
+
+        if (document.body.classList.contains('dark-theme')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
 }
 
 
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {
-  document.body.classList.add('dark-theme');
+    document.body.classList.add('dark-theme');
 }
+
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        if (headerNav && headerNav.classList.contains('open')) {
+            burgerToggle.classList.remove('open');
+            headerNav.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+    }
+});
