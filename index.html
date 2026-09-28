@@ -36,6 +36,9 @@
                         <li class="items_list">
                             <a href="#contact">Contact us</a>
                         </li>
+                        <li class="items_list burger-menu-link">
+                            <a href="menu.html">Menu <img src="assets/coffee-cup.svg" alt="wait"></a>
+                        </li>
                     </ul>
                 </nav>
                 <div class="header_menu">
@@ -53,8 +56,9 @@
                             <p class="menu">Menu <img src="assets/coffee-cup.svg" class="hidden-img" alt="wait"></p>
                         </a>
                     </div>
-                    <div class="menu_burger">
-                        <img src="assets/button-icon-burger.svg" alt="wait">
+                    <div class="menu_burger" id="burger-toggle">
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
             </div>
@@ -86,32 +90,40 @@
                     <h2>Choose your <span class="colored_word">favorite</span> coffee</h2>
                 </div>
                 <div class="slider">
-                    <div class="left_arrow">
+                    <div class="left_arrow" id="slider-prev">
                         <svg class="left" aria-hidden="true" width="14" height="13" viewBox="0 0 14 13" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M13 6.5H0.5M6.5 12.5L0.5 6.5L6.5 0.5" stroke="currentColor" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <div>
+                    <div class="slider_content_wrapper">
                         <div class="cofe_text">
-                            <img class="cofeimg" src="assets/coffee-slider-1.svg" alt="wait">
-                            <h3>S’mores Frappuccino</h3>
-                            <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being
-                                topped
-                                with oat milk.</p>
-                            <h3>$5.50</h3>
+                            <img class="cofeimg" id="slide-img" src="assets/coffee-slider-1.svg" alt="wait">
+                            <h3 id="slide-title">S’mores Frappuccino</h3>
+                            <p id="slide-description">This new drink takes an espresso and mixes it with brown sugar and
+                                cinnamon before being topped with oat milk.</p>
+                            <h3 id="slide-price">$5.50</h3>
                         </div>
                     </div>
-
-                    <div class="right_arrow">
+                    <div class="right_arrow" id="slider-next">
                         <svg aria-hidden="true" width="14" height="13" viewBox="0 0 14 13" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.5 6.5H13M7 12.5L13 6.5L7 0.5" stroke="currentColor" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
                     </div>
-
+                </div>
+                <div class="slider_controls">
+                    <div class="slider_indicator active" data-index="0">
+                        <div class="progress_line"></div>
+                    </div>
+                    <div class="slider_indicator" data-index="1">
+                        <div class="progress_line"></div>
+                    </div>
+                    <div class="slider_indicator" data-index="2">
+                        <div class="progress_line"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -251,6 +263,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="index.js"></script>
 </body>
 
 </html>

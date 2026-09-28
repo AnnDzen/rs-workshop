@@ -356,3 +356,32 @@ additivesButtons.forEach(btn => {
 
 
 renderProducts();
+
+// бургер меню
+const burgerToggle = document.getElementById('burger-toggle');
+const headerNav = document.querySelector('.header_nav');
+const navLinks = document.querySelectorAll('.items_list a');
+
+
+burgerToggle.addEventListener('click', () => {
+   
+    burgerToggle.classList.toggle('open'); 
+    headerNav.classList.toggle('open');    
+
+    if (headerNav.classList.contains('open')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+});
+
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      
+        burgerToggle.classList.remove('open');
+        headerNav.classList.remove('remove'); 
+        headerNav.classList.remove('open');
+        document.body.style.overflow = ''; 
+    });
+});
